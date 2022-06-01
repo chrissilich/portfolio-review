@@ -23,13 +23,13 @@ Usage: partial-name.variable/mixin/function-name:
 background: variables.$primary-color;
 */
 
-@use "reset";
-@use "variables";
-@use "mixins";
-@use "keyframes"; 
-@use "grid"; // ALL the grid LAYOUT should go here
-@use "content"; // all the styling WITHIN the grid items should go here
-
+@use 'reset';
+@use 'variables';
+@use 'fonts';
+@use 'mixins';
+@use 'keyframes';
+@use 'grid'; // ALL the grid LAYOUT should go here
+@use 'content'; // all the styling WITHIN the grid items should go here
 
 * {
 	box-sizing: border-box;

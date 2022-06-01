@@ -1,10 +1,11 @@
-@use "variables";
-@use "mixins";
+@use 'variables';
+@use 'fonts';
+@use 'mixins';
 
 body {
-	background: variables.$site_background;
-	font-family: variables.$main-font;
+	background: variables.$background;
 	overflow: scroll;
+	@include fonts.sans_reg();
 }
 
 // Logo: duh
@@ -110,6 +111,25 @@ body {
 .filled-spacer {
 	background-color: variables.$dark_spacer;
 }
+// in 2022, we added more options
+.filled-blue {
+	background-color: variables.$hero_blue;
+}
+.filled-red {
+	background-color: variables.$hero_red;
+}
+.filled-teal {
+	background-color: variables.$hero_teal;
+}
+.filled-purple {
+	background-color: variables.$hero_purple;
+}
+.filled-orange {
+	background-color: variables.$hero_orange;
+}
+.filled-yellow {
+	background-color: variables.$hero_yellow;
+}
 
 // Main Title: "Student Portfolio Review"
 .main-title {
@@ -128,6 +148,10 @@ body {
 		}
 		span:nth-child(2) {
 			font-size: 0.85em;
+			letter-spacing: 0.03em;
+			&:hover {
+				letter-spacing: 0.06em;
+			}
 		}
 		span:nth-child(3) {
 			font-size: 0.7em;
@@ -174,7 +198,7 @@ body {
 	overflow: hidden;
 	span {
 		position: absolute;
-		top: 50%;
+		top: 53%;
 		width: 100%;
 		transform: translate(-50%, -50%);
 	}
@@ -236,16 +260,13 @@ body {
 	overflow: hidden;
 
 	&.featured-person-orange {
-		background-color: #db7d42;
-		// background-image: url('../img/optamizedStudents/drbalSammi/SDrbal-portfolioreview-2.png');
+		background-color: variables.$hero_tint_orange;
 	}
 	&.featured-person-blue {
-		background-color: #6889aa;
-		// background-image: url('../img/optamizedStudents/simonMichael/michael_3.png');
+		background-color: variables.$hero_tint_blue;
 	}
 	&.featured-person-peach {
-		background-color: #ebb29d;
-		// background-image: url('../img/optamizedStudents/chungAbigail/abigail_2.png');
+		background-color: variables.$hero_tint_red;
 	}
 
 	img {
@@ -287,42 +308,37 @@ body {
 
 	&.student-purple {
 		figure {
-			background-color: #ac9deb;
-		}
-	}
-	&.student-pink {
-		figure {
-			background-color: #eb9daf;
+			background-color: variables.$hero_purple;
 		}
 	}
 	&.student-blue {
 		figure {
-			background-color: #89a5d3;
+			background-color: variables.$hero_blue;
 		}
 	}
 	&.student-green {
 		figure {
-			background-color: #68aa81;
+			background-color: variables.$hero_teal;
 		}
 	}
 	&.student-orange {
 		figure {
-			background-color: #d1986e;
+			background-color: variables.$hero_orange;
 		}
 	}
 	&.student-yellow {
 		figure {
-			background-color: #dbbe42;
+			background-color: variables.$hero_yellow;
 		}
 	}
 	&.student-dark-blue {
 		figure {
-			background-color: #6877aa;
+			background-color: variables.$hero_blue;
 		}
 	}
 	&.student-red {
 		figure {
-			background-color: #ae5353;
+			background-color: variables.$hero_red;
 		}
 	}
 	.student-content {

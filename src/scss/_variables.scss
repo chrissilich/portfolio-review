@@ -16,15 +16,41 @@ $breakpoint-desktop: 992px;
 $breakpoint-xl: 1200px;
 
 // * 1. Colors =======================================
-$site_background: #ebe0cc;
 $black: rgb(32, 32, 32);
 $dark_spacer: #620505;
+$background: #f7f0e6;
 
-// * 2. Fonts ==========================================
+$hero_blue: #65a2eb;
+$hero_red: #d3253d;
+$hero_teal: #4ad9bf;
+$hero_purple: #9482db;
+$hero_orange: #ff7647;
+$hero_yellow: #fcaf32;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Pacifico&display=swap');
+$hero_tint_blue: lighten(#65a2eb, 7%);
+$hero_tint_red: lighten(#d3253d, 7%);
+$hero_tint_teal: lighten(#4ad9bf, 7%);
+$hero_tint_purple: lighten(#9482db, 7%);
+$hero_tint_orange: lighten(#ff7647, 5%);
+$hero_tint_yellow: lighten(#fcaf32, 7%);
 
-$main-font: 'Poppins', sans-serif;
-// $main-font:'Noto Sans', sans-serif;
+$tone_blue: #4b82c3;
+$tone_red: #e03d58;
+$tone_teal: #39c4ab;
+$tone_purple: #7c6eb9;
+$tone_orange: #eb6538;
+$tone_yellow: #fc9b00;
+
+$tint_blue: #c5d5ed;
+$tint_red: #edc2c8;
+$tint_teal: #c3e8e1;
+$tint_purple: #cdc6e6;
+$tint_orange: #f0ccc2;
+$tint_yellow: #fce7c5;
+
+$tint_extra_light_blue: #e1e9f5;
+$tint_extra_light_red: #f5e4e6;
+$tint_extra_light_teal: #e4f5f2;
+$tint_extra_light_purple: #e9e6f0;
+$tint_extra_light_orange: #f7eeeb;
+$tint_extra_light_yellow: #f7f0e6;
