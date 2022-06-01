@@ -146,22 +146,31 @@ body {
 		@include mixins.mobile {
 			font-size: 20vw;
 		}
-		span:nth-child(2) {
+		div:nth-child(2) {
 			font-size: 0.85em;
-			letter-spacing: 0.03em;
+			letter-spacing: 0.04em;
 			&:hover {
-				letter-spacing: 0.06em;
+				letter-spacing: 0.07em;
 			}
 		}
-		span:nth-child(3) {
+		div:nth-child(3) {
 			font-size: 0.7em;
 		}
 
-		span {
+		div {
 			transition: letter-spacing 0.3s;
 			&:hover {
 				letter-spacing: 0.03em;
 			}
+		}
+
+		span.l {
+			margin-left: -0em;
+			margin-right: -0.06em;
+		}
+		span.o {
+			margin-left: -0.08em;
+			margin-right: -0.08em;
 		}
 	}
 }
@@ -173,19 +182,19 @@ body {
 	justify-content: center;
 	flex-direction: column;
 	&.main-title-mobile-student {
-		font-size: 13vw;
+		font-size: 12vw;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 	}
 	&.main-title-mobile-portfolio {
-		font-size: 20vw;
+		font-size: 19vw;
 		// text-transform: uppercase;
 		letter-spacing: 0.1em;
 	}
 	&.main-title-mobile-review {
-		font-size: 14vw;
+		font-size: 13vw;
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
+		letter-spacing: 0.15em;
 	}
 }
 
@@ -354,8 +363,8 @@ body {
 			height: 0;
 			padding-bottom: 50%;
 			@include mixins.mobile {
-				width: percentage(7/12);
-				padding-bottom: percentage(7/12);
+				width: percentage(6/12);
+				padding-bottom: percentage(6/12);
 			}
 			img {
 				position: absolute;
@@ -385,20 +394,21 @@ body {
 			padding: 1vw 1vw;
 			@include mixins.mobile {
 				padding: 1vw 2vw;
-				width: percentage(5/12);
-				font-size: 4vw;
+				width: percentage(6/12);
+				font-size: 5vw;
 			}
 
 			h3 {
 				// name
 				font-size: 1.4em;
 				margin: 0.2em 0;
+				@include fonts.sans_med();
 			}
 			h4 {
 				// program
 				font-size: 0.95em;
 				margin: 0.15em 0 0.2em;
-				font-style: italic;
+				@include fonts.sans_med_italic();
 			}
 			h5 {
 				// grad status

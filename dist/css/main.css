@@ -928,21 +928,29 @@ body {
     font-size: 20vw;
   }
 }
-.main-title h1 span:nth-child(2) {
+.main-title h1 div:nth-child(2) {
   font-size: 0.85em;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
 }
-.main-title h1 span:nth-child(2):hover {
-  letter-spacing: 0.06em;
+.main-title h1 div:nth-child(2):hover {
+  letter-spacing: 0.07em;
 }
-.main-title h1 span:nth-child(3) {
+.main-title h1 div:nth-child(3) {
   font-size: 0.7em;
 }
-.main-title h1 span {
+.main-title h1 div {
   transition: letter-spacing 0.3s;
 }
-.main-title h1 span:hover {
+.main-title h1 div:hover {
   letter-spacing: 0.03em;
+}
+.main-title h1 span.l {
+  margin-left: 0em;
+  margin-right: -0.06em;
+}
+.main-title h1 span.o {
+  margin-left: -0.08em;
+  margin-right: -0.08em;
 }
 
 .main-title-mobile {
@@ -952,18 +960,18 @@ body {
   flex-direction: column;
 }
 .main-title-mobile.main-title-mobile-student {
-  font-size: 13vw;
+  font-size: 12vw;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 .main-title-mobile.main-title-mobile-portfolio {
-  font-size: 20vw;
+  font-size: 19vw;
   letter-spacing: 0.1em;
 }
 .main-title-mobile.main-title-mobile-review {
-  font-size: 14vw;
+  font-size: 13vw;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
 }
 
 .big-letter {
@@ -1105,8 +1113,8 @@ body {
 }
 @media screen and (max-width: 767px) {
   .student .student-content figure {
-    width: 58.3333333333%;
-    padding-bottom: 58.3333333333%;
+    width: 50%;
+    padding-bottom: 50%;
   }
 }
 .student .student-content figure img {
@@ -1136,17 +1144,22 @@ body {
 @media screen and (max-width: 767px) {
   .student .student-content figcaption {
     padding: 1vw 2vw;
-    width: 41.6666666667%;
-    font-size: 4vw;
+    width: 50%;
+    font-size: 5vw;
   }
 }
 .student .student-content figcaption h3 {
   font-size: 1.4em;
   margin: 0.2em 0;
+  font-family: "Avenir Next", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 .student .student-content figcaption h4 {
   font-size: 0.95em;
   margin: 0.15em 0 0.2em;
+  font-family: "Avenir Next", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
   font-style: italic;
 }
 .student .student-content figcaption h5 {
