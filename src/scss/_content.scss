@@ -1,0 +1,595 @@
+@use "variables";
+@use "mixins";
+
+body {
+	background: variables.$site_background;
+	font-family: variables.$main-font;
+	overflow: scroll;
+}
+
+// Logo: duh
+.logo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	a {
+		width: 65%;
+		height: 65%;
+		img {
+			width: 100%;
+			transition: 1s;
+			&:hover {
+				transform: rotate(360deg) scale(1.25);
+			}
+		}
+	}
+}
+
+// Nav: typography for all nav items
+.nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.7vw;
+	letter-spacing: 0.05em;
+
+	@include mixins.mobile {
+		font-size: 4vw;
+	}
+}
+
+.faq-button {
+	color: black;
+	text-decoration: none;
+}
+
+// Nav Dropdown: quarter or program in the top nav
+.nav-dropdown {
+	position: relative;
+	cursor: pointer;
+
+	&:hover {
+		ul {
+			display: block;
+		}
+	}
+	ul {
+		position: absolute;
+		display: none;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		background-color: #ebe0cc;
+
+		li {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid variables.$black;
+			border-bottom-width: 0;
+			font-size: 0.8em;
+			line-height: 1.2em;
+			text-align: center;
+			min-height: variables.$column * 1.5;
+			padding: 0 1vw;
+			color: variables.$black;
+			text-decoration: none;
+			cursor: pointer;
+
+			@include mixins.mobile {
+				padding: 3vw 1vw;
+			}
+
+			&:last-child {
+				border-bottom-width: 1px;
+			}
+
+			&:hover {
+				background-color: rgba(255, 255, 255, 0.3);
+			}
+			&.active {
+				background-color: rgba(255, 255, 255, 0.5);
+			}
+			&.clicked {
+				background-color: rgba(255, 255, 255, 1);
+			}
+
+			small {
+				display: block;
+				font-size: 0.8em;
+				opacity: 0.5;
+			}
+		}
+	}
+}
+
+// Filled Spacer: in the 2021 site, this is a grid item that's just filled with maroon
+.filled-spacer {
+	background-color: variables.$dark_spacer;
+}
+
+// Main Title: "Student Portfolio Review"
+.main-title {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 0 0 2vw;
+	@include mixins.mobile {
+		padding: 0 0 0 6vw;
+	}
+	h1 {
+		font-weight: 300;
+		font-size: 11vw;
+		@include mixins.mobile {
+			font-size: 20vw;
+		}
+		span:nth-child(2) {
+			font-size: 0.85em;
+		}
+		span:nth-child(3) {
+			font-size: 0.7em;
+		}
+
+		span {
+			transition: letter-spacing 0.3s;
+			&:hover {
+				letter-spacing: 0.03em;
+			}
+		}
+	}
+}
+
+// Main Title Mobile: "Student Portfolio Review", but the mobile version is structured completely differently
+.main-title-mobile {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	&.main-title-mobile-student {
+		font-size: 13vw;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+	}
+	&.main-title-mobile-portfolio {
+		font-size: 20vw;
+		// text-transform: uppercase;
+		letter-spacing: 0.1em;
+	}
+	&.main-title-mobile-review {
+		font-size: 14vw;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+	}
+}
+
+// Big Letters: the big ass letters on the top section that spell out "CIRCUS"
+.big-letter {
+	position: relative;
+	font-size: 9vw;
+	text-transform: uppercase;
+	text-align: center;
+	overflow: hidden;
+	span {
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		transform: translate(-50%, -50%);
+	}
+	&.animate {
+		span {
+			animation-name: big-letter-right;
+			animation-duration: 1s;
+			animation-fill-mode: both;
+		}
+	}
+	&.big-letter-c1.animate {
+		span {
+			animation-name: big-letter-down;
+		}
+	}
+	&.big-letter-i.animate {
+		span {
+			animation-name: big-letter-up;
+		}
+	}
+	&.big-letter-r.animate {
+		span {
+			animation-name: big-letter-left;
+		}
+	}
+	&.big-letter-u.animate {
+		span {
+			animation-name: big-letter-left;
+		}
+	}
+	&.big-letter-s.animate {
+		span {
+			animation-name: big-letter-down;
+		}
+	}
+}
+
+// Star Line: the horizontal bar with 4 variables.$black stars in it
+.star-line {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	img {
+		height: 50%;
+	}
+	&.star-line-corner {
+		img {
+			height: 25%;
+		}
+	}
+}
+
+// Featured People: people in the upper grid
+.featured-person {
+	background-size: contain;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	position: relative;
+	overflow: hidden;
+
+	&.featured-person-orange {
+		background-color: #db7d42;
+		// background-image: url('../img/optamizedStudents/drbalSammi/SDrbal-portfolioreview-2.png');
+	}
+	&.featured-person-blue {
+		background-color: #6889aa;
+		// background-image: url('../img/optamizedStudents/simonMichael/michael_3.png');
+	}
+	&.featured-person-peach {
+		background-color: #ebb29d;
+		// background-image: url('../img/optamizedStudents/chungAbigail/abigail_2.png');
+	}
+
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		transform: translateX(110%);
+		&:nth-child(1) {
+			transform: translateX(0%);
+		}
+	}
+}
+
+.spacer-top-of-students {
+	display: flex;
+	div {
+		flex-grow: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		img {
+			height: 15%;
+		}
+	}
+}
+
+.student {
+	display: flex;
+	flex-direction: column;
+
+	@include mixins.mobile {
+		&:nth-child(odd) {
+			figcaption {
+				order: -1;
+			}
+		}
+	}
+
+	&.student-purple {
+		figure {
+			background-color: #ac9deb;
+		}
+	}
+	&.student-pink {
+		figure {
+			background-color: #eb9daf;
+		}
+	}
+	&.student-blue {
+		figure {
+			background-color: #89a5d3;
+		}
+	}
+	&.student-green {
+		figure {
+			background-color: #68aa81;
+		}
+	}
+	&.student-orange {
+		figure {
+			background-color: #d1986e;
+		}
+	}
+	&.student-yellow {
+		figure {
+			background-color: #dbbe42;
+		}
+	}
+	&.student-dark-blue {
+		figure {
+			background-color: #6877aa;
+		}
+	}
+	&.student-red {
+		figure {
+			background-color: #ae5353;
+		}
+	}
+	.student-content {
+		width: 100%;
+		display: flex;
+		// flex-grow: 3;
+
+		figure {
+			// the photo
+			// background: rgba(221, 201, 201, 0.2);
+			width: 50%;
+			position: relative;
+			height: 0;
+			padding-bottom: 50%;
+			@include mixins.mobile {
+				width: percentage(7/12);
+				padding-bottom: percentage(7/12);
+			}
+			img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+
+				display: none;
+
+				&:nth-child(1) {
+					display: block;
+				}
+				&.hide {
+					display: none !important;
+				}
+				&.show {
+					display: block !important;
+				}
+			}
+		}
+		figcaption {
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			font-size: 2vw;
+			padding: 1vw 1vw;
+			@include mixins.mobile {
+				padding: 1vw 2vw;
+				width: percentage(5/12);
+				font-size: 4vw;
+			}
+
+			h3 {
+				// name
+				font-size: 1.4em;
+				margin: 0.2em 0;
+			}
+			h4 {
+				// program
+				font-size: 0.95em;
+				margin: 0.15em 0 0.2em;
+				font-style: italic;
+			}
+			h5 {
+				// grad status
+				font-size: 0.65em;
+				margin: 0.5em 0 0.25em;
+			}
+			h6 {
+				// hiring status
+				font-size: 0.65em;
+				margin: 0 0;
+			}
+			p {
+				// buttons
+				margin: 0.5em 0;
+				a {
+					display: inline-block;
+					font-size: 0.6em;
+					padding: 0.65em 0.9em;
+					margin-top: 0.5em;
+					border: 1px solid variables.$black;
+					border-radius: 100px;
+					color: variables.$black;
+					text-decoration: none;
+					&:hover {
+						background-color: rgba(255, 255, 255, 0.5);
+					}
+				}
+			}
+		}
+	}
+
+	.spacer {
+		width: 100%;
+		// height: percentage(1/4);
+		flex-grow: 2;
+		display: flex;
+		div {
+			display: flex;
+			position: relative;
+			flex-grow: 1;
+			// height: 100%;
+			@include mixins.bt;
+			@include mixins.bl;
+			img {
+				// stars
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				height: 25%;
+			}
+		}
+		div:nth-child(1) {
+			border-left-width: 0;
+		}
+		&.spacer-2-1 {
+			div:nth-child(1) {
+				flex-grow: 2;
+			}
+		}
+		&.spacer-1-2 {
+			div:nth-child(2) {
+				flex-grow: 2;
+			}
+		}
+	}
+}
+
+.end-cap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	a {
+		font-size: 1.6em;
+		color: black;
+		text-decoration: none;
+		&:hover {
+			span.text {
+				text-decoration: underline;
+			}
+			span.bouncer {
+				position: relative;
+				animation-name: bounce-arrow;
+				animation-duration: 1s;
+				// animation-direction: alternate;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
+			}
+		}
+	}
+}
+
+.faq {
+	.faq-content {
+		width: percentage(16/24);
+		@include mixins.mobile {
+			width: percentage(22/24);
+		}
+		margin: 0 auto;
+		padding: 2em 1em;
+
+		h2 {
+			font-size: 4em;
+			letter-spacing: 0.2em;
+			transition: 0.3s;
+			&:hover {
+				letter-spacing: 0.3em;
+			}
+		}
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+			li {
+				margin: 1.5em 0 2em;
+				p {
+					margin: 0.5em 0;
+					line-height: 1.4em;
+					&.q {
+						font-size: 1.25em;
+						font-style: italic;
+					}
+					&.a {
+					}
+					a {
+						color: black;
+					}
+				}
+			}
+		}
+	}
+}
+
+.end-cap-after-grads {
+	@include mixins.mobile {
+		display: none;
+	}
+}
+
+.grad-divider {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 2.3vw;
+	@include mixins.mobile {
+		flex-direction: column;
+		font-size: 5vw;
+	}
+	p {
+		text-align: center;
+		width: 28vw;
+
+		@include mixins.mobile {
+			width: 100%;
+		}
+	}
+	p.stars {
+		display: flex;
+		justify-content: space-evenly;
+		img {
+			height: 0.8em;
+		}
+	}
+	.bouncer {
+		position: relative;
+		animation-name: bounce-arrow;
+		animation-duration: 1s;
+		// animation-direction: alternate;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+
+		&.bouncer-offset {
+			animation-delay: 0.5s;
+		}
+	}
+}
+
+.spacer-top-of-non-grads {
+	display: flex;
+	div {
+		flex-grow: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		img {
+			height: 16%;
+		}
+	}
+}
+
+.faq {
+	@include mixins.bt;
+	@include mixins.bl;
+}
+
+footer {
+	display: flex;
+	height: variables.$column * 2;
+	@include mixins.bt;
+	@include mixins.bl;
+	div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-grow: 1;
+		img {
+			width: 3vw;
+		}
+	}
+}
