@@ -966,7 +966,7 @@ body {
 .student.student-purple figure {
 	background-color: #9482db;
 }
-.student.student-blue figure {
+.student.student-blue figure, .student.student-dark-blue figure {
 	background-color: #65a2eb;
 }
 .student.student-green figure {
@@ -977,9 +977,6 @@ body {
 }
 .student.student-yellow figure {
 	background-color: #fcaf32;
-}
-.student.student-dark-blue figure {
-	background-color: #65a2eb;
 }
 .student.student-red figure {
 	background-color: #d3253d;

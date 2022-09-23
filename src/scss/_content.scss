@@ -320,7 +320,8 @@ body {
 			background-color: variables.$hero_purple;
 		}
 	}
-	&.student-blue {
+	&.student-blue,
+	&.student-dark-blue {
 		figure {
 			background-color: variables.$hero_blue;
 		}
@@ -340,11 +341,7 @@ body {
 			background-color: variables.$hero_yellow;
 		}
 	}
-	&.student-dark-blue {
-		figure {
-			background-color: variables.$hero_blue;
-		}
-	}
+
 	&.student-red {
 		figure {
 			background-color: variables.$hero_red;
